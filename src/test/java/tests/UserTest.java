@@ -2,6 +2,9 @@ package tests;
 
 import base.BaseTest;
 import endpoints.UserEndpoint;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.testng.AllureTestNg;
 import io.qameta.allure.testng.AllureTestNgTestFilter;
 import io.restassured.response.Response;
@@ -16,7 +19,7 @@ public class UserTest extends BaseTest {
 
     UserEndpoint userEndpoint = new UserEndpoint();
 
-    @Test
+    @Test(description = "verify user fetch works")
     public void testGetUserFromPage2(){ // get users
 
         Response response = userEndpoint.getUserList(2);
@@ -26,6 +29,12 @@ public class UserTest extends BaseTest {
 
     }
 
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Simple dummy test")
+    public void sampleTest() {
+        System.out.println("Test ran successfully.");
+    }
 //    @Test
 //    public void testCreateUser() { // post user
 //
